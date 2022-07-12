@@ -1,0 +1,60 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++.exe сборка активного файла",
+            "command": "C:\\msys64\\mingw64\\bin\\g++.exe",
+            "args": [
+                //compiller:
+                "-fdiagnostics-color=always",
+                "-g",
+                
+                "${workspaceFolder}\\src\\**.cpp",
+                "${workspaceFolder}\\src\\render\\**.cpp",
+                "${workspaceFolder}\\src\\objects\\**.cpp",
+                "${workspaceFolder}\\src\\menu\\**.cpp",
+                "${workspaceFolder}\\libs\\utils\\shaderLoader.cpp",
+                "${workspaceFolder}\\libs\\utils\\assimpParser.cpp",
+                "${workspaceFolder}\\libs\\ImGuiFileDialog\\ImGuiFileDialog.cpp",
+                "${workspaceFolder}\\libs\\imgui\\**.cpp",
+
+                "-I${workspaceFolder}\\libs",
+                "-I${workspaceFolder}\\src",
+                "-I${workspaceFolder}\\src\\render",
+                "-I${workspaceFolder}\\src\\objects",
+                "-I${workspaceFolder}\\src\\menu",
+                "-I${workspaceFolder}\\libs\\sfml gcc\\include",
+                "-I${workspaceFolder}\\libs\\glew 2.1.0\\include",
+                "-I${workspaceFolder}\\libs\\imgui",
+                "-I${workspaceFolder}\\libs\\assimplib\\include",
+
+                //linker:
+                "-o",
+                "${workspaceFolder}\\main.exe",
+
+                "-L${workspaceFolder}\\libs\\sfml gcc\\lib",
+                //"-lsfml-main",
+                "-lsfml-graphics",
+                "-lsfml-window",
+                "-lsfml-system",
+                "-lopengl32",
+
+                "-L${workspaceFolder}\\libs\\glew 2.1.0\\lib",
+                "-lglew32",
+
+                "-L${workspaceFolder}\\libs\\assimplib\\lib",
+                "-lassimp",
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+                //"cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+            "detail": "компилятор: C:\\msys64\\mingw64\\bin\\g++.exe"
+        }
+    ]
+}
